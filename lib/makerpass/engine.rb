@@ -1,4 +1,3 @@
-require "omniauth"
 require "omniauth-makersquare"
 
 module MakerPass
