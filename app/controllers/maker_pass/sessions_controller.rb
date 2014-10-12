@@ -11,7 +11,7 @@ module MakerPass
 
     def destroy
       reset_session
-      redirect_to root_path
+      redirect_to main_app.root_path
     end
   end
 end
