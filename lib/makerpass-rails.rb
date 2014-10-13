@@ -1,5 +1,5 @@
 require "makerpass/engine"
-require "makerpass/authable"
+require "makerpass/setup"
 
 module MakerPass
 end
