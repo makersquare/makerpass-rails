@@ -1,3 +1,34 @@
 = MakerPass
 
-This project rocks and uses MIT-LICENSE.
+## Quick setup
+
+Gemfile
+
+```
+gem "makerpass-rails", "~> 0.0.2"
+```
+
+run ```bundle install```
+
+#### Route file  ```config/routes.rb```
+
+```
+mount MakerPass::Engine, at: "/"
+```
+
+#### Application Controller ```app/controllers/application_controllers.rb```
+
+```
+include MakerPass::Setup
+make_auth User
+```
+
+### Requirements
+
+Your app must have a user model with ```name```, ```email```, ```avatar_url```
+
+
+## Flow
+
+
+
