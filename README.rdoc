@@ -1,4 +1,6 @@
-= MakerPass
+# MakerPass-Rails
+
+Quick way to get auth via makerpass on your rails app!
 
 ## Quick setup
 
@@ -29,6 +31,29 @@ Your app must have a user model with ```name```, ```email```, ```avatar_url```
 
 
 ## Flow
+*Login*:
+
+Create a link to have a user login into makerpass: ```<%= link_to "Login", "/auth/makerpass" %>```
+
+*Logout*:
+
+Create a link to have a user logout: ```<%= link_to "Login", "/sessions", :method => :delete %>``
+
+#### Method Helpers:
+```current_user``` will return the user that is currently login in. If a user is not login, this method will return nil.
+
+Use ```authenticate_user``` as a ```before_action``` option to protect certain controller actions from unauthorized users. I.e.:
+```
+class PrivateController < ApplicationController
+    before_action :authenticate_user
+
+    def secret
+        #will not run if visited by unauthorized user.
+    end
+end
+```
+
+##
 
 
 
