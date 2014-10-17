@@ -29,12 +29,6 @@ make_auth User
 
 - Your app must have a ```User``` model with columns ```name```, ```email```, ```avatar_url``` and ```uid```. All columns need to be type: ```string```. ```uid``` refers to the id MakerPass has assigned this user. Ideally you would want to have the ```uid``` indexed.
 
-- ```root``` must also be defined in ```config/routes.rb```
-
-- **Sign-in**: ```<%= link_to "Sign-In", "/auth/makersquare" %>``` ( This is handle by the omniauth gem )
-
-- **Sign-Out**: ```<%= link_to "Sign-Out", "/sessions", :method => :delete %>``` ( This is handle by the ```MakerPass-Rails gem``` and can be overriden. )
-
 
 ## Flow
 *Login*:
@@ -102,14 +96,23 @@ The hash that is passed in looks like:
   }
 ```
 
-notice the string keys.
-
+*Notice:* string keys.
 
 #### Redirect to different path after login / logout
 
+You can override the path which the user gets redirected to in your ```app/controllers/application_controller.rb```.
 
+```
+  def after_sign_in_path
+    "/explicit/after_sign_in_path"
+  end
 
+  def after_sign_out_path
+    "/explicit/after_sign_out_path"
+  end
 
+```
 
+** DO NOT USE PATH HELPERS HERE, i.e. ```users_path```, you MUST use a string. ** I'm unable to figure out a way to have path_helpers work in these methods without polluting Rails. PR anyone?
 
 
