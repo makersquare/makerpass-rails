@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1.6"
+  s.add_dependency "figaro", "~> 1.0.0"
   s.add_dependency "omniauth-makersquare", ">= 0.0.2"
 
   s.add_development_dependency "pg"

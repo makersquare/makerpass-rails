@@ -4,6 +4,17 @@ Quick way to get auth via makerpass on your rails app!
 
 ## Quick setup
 
+Register your app with Gilbert[at]makersquare.com. You will be given a key and secret.
+
+run ```bundle exec figaro install```
+this will create a file: config/application.yml
+This is where you want to place your MKS key and secret:
+
+```
+MAKERSQUARE_KEY: SOME_SUPER_SECRET_KEY
+MAKERSQUARE_SECRET: A_MORE_SECRET_SECRET_WHAAAT
+```
+
 Gemfile
 
 ```
