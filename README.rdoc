@@ -2,6 +2,11 @@
 
 Quick way to get auth via makerpass on your rails app!
 
+## Dependencies
+  - [Rails](https://github.com/rails/rails)
+  - [Figaro](https://github.com/laserlemon/figaro)
+  - [Omniauth-Makersquare](https://github.com/makersquare/omniauth-makersquare)
+
 ## Quick setup
 
 Register your app with Gilbert[at]makersquare.com. You will be given a key and secret.
@@ -125,5 +130,4 @@ You can override the path which the user gets redirected to in your ```app/contr
 ```
 
 ** DO NOT USE PATH HELPERS HERE, i.e. ```users_path```, you MUST use a string. ** I'm unable to figure out a way to have path_helpers work in these methods without polluting Rails. PR anyone?
-
 
