@@ -11,7 +11,7 @@ module MakerPass
     module ClassMethods
       def make_authable(model)
         model.extend(Rails::Model::Authable)
-        self.extend(Rails::RouteCallbacks)
+        self.send(:include, Rails::RouteCallbacks)
         Rails::Controller.setup_helpers(self, model)
       end
     end

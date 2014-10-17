@@ -17,7 +17,7 @@ module MakerPass
     def find_redirect_path(path)
       root = main_app.respond_to?(:root_path) ? main_app.root_path : "/"
 
-      redirect_to session[:return_to] || self.public_send(path) || root
+      session[:return_to] || self.public_send(path) || root
     end
 
   end
