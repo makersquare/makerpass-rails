@@ -58,7 +58,7 @@ Create a link to have a user logout: ```<%= link_to "Login", "/sessions", :metho
 #### Method Helpers:
 ```current_user``` will return the user that is currently login in. If a user is not login, this method will return nil.
 
-Use ```authenticate_user``` as a ```before_action``` option to protect certain controller actions from unauthorized users.
+Use ```authenticate_user!``` as a ```before_action``` option to protect certain controller actions from unauthorized users.
 
 ```
 class PrivateController < ApplicationController
