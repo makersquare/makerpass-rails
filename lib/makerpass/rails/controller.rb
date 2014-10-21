@@ -16,7 +16,7 @@ module MakerPass::Rails
         def authenticate_#{model_name}!
           if current_#{model_name}.nil?
             session[:return_to] = request.fullpath
-            redirect_to self.try(:root_path) || "/"
+            redirect_to self.respond_to?(:root_path) ? root_path : "/"
           end
         end
       }
